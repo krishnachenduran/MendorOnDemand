@@ -1,0 +1,1063 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Mendor-On-Demand</title>
+
+
+<!--Local linked files-->
+<link rel="stylesheet" type="text/css" media="screen" href="/MOD/theme1/css/main.css">
+<link rel="stylesheet" type="text/css" media="screen" href="/MOD/theme1/css/loader.css">
+<script src="/MOD/theme1/js/main.js" ></script>
+<script src="/MOD/theme1/js/loader.js" ></script>
+
+
+<!--Bootstrap cdn links-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+        <link rel="stylesheet" href="/MOD/theme1/css/style.css" >
+        
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<script>
+  function form3() {
+      var fname = document.getElementById("fname3");
+      var lname = document.getElementById("lname3");
+      var gender = document.getElementById("gender3");
+    var contact = document.getElementById("contact3");
+    var email = document.getElementById("email3");
+    var uname = document.getElementById("name3");
+    var pwd = document.getElementById("pwd3");
+    
+     var letters = /^[A-Za-z]+$/;
+     var numbers = /^[0-9]+$/;
+     var pass = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+     var alnum = /^[A-Za-z0-9]+$/;
+     var mail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    
+     
+     
+    /******FIRSTNAME******/
+    
+    if(fname.value == ""){
+      alert("Firstname should not be empty.");
+      fname.focus();
+      return false;
+    }
+    else if(!(fname.value.match(letters))){
+      alert("Firstname must only contain letters.");
+      fname.focus();
+      return false;
+    }
+    
+    
+    /******LASTNAME******/
+    
+    if(lname.value == ""){
+      alert("Lastname should not be empty.");
+      lname.focus();
+      return false;
+    }
+    else if(!(lname.value.match(letters))){
+      alert("Lastname must only contain letters.");
+      lname.focus();
+      return false;
+    }
+    
+    /******GENDER******/
+    
+    if(gender.value == ""){
+      alert("Please select gender.");
+      gender.focus();
+      return false;
+    }
+      
+      
+      /******CONTACT******/
+      
+      if(contact.value == ""){
+        alert("Contact should not be empty.");
+        contact.focus();
+        return false;
+      }
+      else if(!(contact.value.match(numbers))){
+        alert("Contact must only contain digits.");
+        contact.focus();
+        return false;
+      }
+      else if(contact.value.length < 10){
+        alert("Contact must be 10 digits long.");
+        contact.focus();
+        return false;
+      }
+      
+      
+      
+      /******EMAIL******/
+    
+    if(email.value == ""){
+      alert("Email should not be empty.");
+      email.focus();
+      return false;
+    }
+    else if(!(email.value.match(mail))){
+      alert("Invalid email id.");
+      email.focus();
+      return false;
+    }
+      
+     
+      
+     /******USERNAME******/
+    
+    if(uname.value == ""){
+      alert("Username should not be empty.");
+      uname.focus();
+      return false;
+    }
+    else if(uname.value.length < 6){
+      alert("Username must be atleast 6 characters long.");
+      uname.focus();
+      return false;
+    }
+    else if(!(uname.value.match(alnum))){
+      alert("Username only contains letters and numbers (no special characters)");
+      uname.focus();
+      return false;
+    }
+      
+      
+    /******PASSWORD******/
+    
+    if(pwd.value == ""){
+      alert("Password should not be empty.");
+      pwd.focus();
+      return false;
+    }
+    else if(pwd.value.length < 8){
+      alert("Password must be atleast 8 characters long.");
+      pwd.focus();
+      return false;
+    }
+    else if(!(pwd.value.match(pass))){
+      alert("Password : \nContains at least 1 numberContains at least 1 lowercase letter\nContains at least 1 uppercase letter\nContains a special character (e.g. @ !)");
+      pwd.focus();
+      return false;
+    }
+      
+    return true;
+      
+  }
+  
+  
+  /*************************************************************************REGISTER DOCTOR**************************************************************************/
+  function form4() {
+    var fname = document.getElementById("fname4");
+    var lname = document.getElementById("lname4");
+	var specialization = document.getElementById("specialization4");
+	var practice = document.getElementById("practice4");
+	var clinic = document.getElementById("clinic4");
+	var contact = document.getElementById("contact4");
+	var email = document.getElementById("email4");
+	var uname = document.getElementById("name4");
+	var pwd = document.getElementById("pwd4");
+	
+	 var letters = /^[A-Za-z]+$/;
+	 var numbers = /^[0-9]+$/;
+	 var pass = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+	 var alnum = /^[A-Za-z0-9]+$/;
+	 var mail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	
+	 
+	 
+	/******FIRSTNAME******/
+	
+	if(fname.value == ""){
+		alert("Firstname should not be empty.");
+		fname.focus();
+		return false;
+	}
+	else if(!(fname.value.match(letters))){
+		alert("Firstname must only contain letters.");
+		fname.focus();
+		return false;
+	}
+	
+	
+	/******LASTNAME******/
+	
+	if(lname.value == ""){
+		alert("Lastname should not be empty.");
+		lname.focus();
+		return false;
+	}
+	else if(!(lname.value.match(letters))){
+		alert("Lastname must only contain letters.");
+		lname.focus();
+		return false;
+	}
+	
+	
+		/******SPECIALIZATION******/
+	
+	if(specialization.value == ""){
+		alert("Specialization should not be empty.");
+		specialization.focus();
+		return false;
+	}
+	else if(!(specialization.value.match(letters))){
+		alert("Specialization must only contain letters.");
+		specialization.focus();
+		return false;
+	}
+	
+		
+		/******PRACTICE******/
+	
+	if(practice.value == ""){
+		alert("Practice should not be empty.");
+		practice.focus();
+		return false;
+	}
+	else if(!(practice.value.match(numbers))){
+		alert("Practice must only contain digits.");
+		practice.focus();
+		return false;
+	}
+		
+		
+		/******CLINIC******/
+	
+	if(clinic.value == ""){
+		alert("Clinic should not be empty.");
+		clinic.focus();
+		return false;
+	}
+	else if(!(clinic.value.match(letters))){
+		alert("Clinic must only contain letters.");
+		clinic.focus();
+		return false;
+	}
+		
+		
+		/******CONTACT******/
+		
+		if(contact.value == ""){
+			alert("Contact should not be empty.");
+			contact.focus();
+			return false;
+		}
+		else if(!(contact.value.match(numbers))){
+			alert("Contact must only contain digits.");
+			contact.focus();
+			return false;
+		}
+		else if(contact.value.length < 10){
+			alert("Contact must be 10 digits long.");
+			contact.focus();
+			return false;
+		}
+    
+    
+    
+    /******EMAIL******/
+	
+	if(email.value == ""){
+		alert("Email should not be empty.");
+		email.focus();
+		return false;
+	}
+	else if(!(email.value.match(mail))){
+		alert("Invalid email id.");
+		email.focus();
+		return false;
+	}
+    
+   
+    
+ 	/******USERNAME******/
+	
+	if(uname.value == ""){
+		alert("Username should not be empty.");
+		uname.focus();
+		return false;
+	}
+	else if(uname.value.length < 6){
+		alert("Username must be atleast 6 characters long.");
+		uname.focus();
+		return false;
+	}
+	else if(!(uname.value.match(alnum))){
+		alert("Username only contains letters and numbers (no special characters)");
+		uname.focus();
+		return false;
+	}
+    
+    
+	/******PASSWORD******/
+	
+	if(pwd.value == ""){
+		alert("Password should not be empty.");
+		pwd.focus();
+		return false;
+	}
+	else if(pwd.value.length < 8){
+		alert("Password must be atleast 8 characters long.");
+		pwd.focus();
+		return false;
+	}
+	else if(!(pwd.value.match(pass))){
+		alert("Password : \nContains at least 1 numberContains at least 1 lowercase letter\nContains at least 1 uppercase letter\nContains a special character (e.g. @ !)");
+		pwd.focus();
+		return false;
+	}
+    
+	return true;
+    
+}
+
+/*******/
+ close = document.getElementById("close");
+         
+
+</script>
+
+<style>
+	/******************************/
+		#note {
+		    position: absolute;
+		    z-index: 101;
+		    top: 0;
+		 	padding-left: 20px;
+		 	padding-right: 20px;
+		    background: #28a745;
+		    text-align: center;
+		    line-height: 2.5;
+		    overflow: hidden; 
+		    -webkit-box-shadow: 0 0 5px black;
+		    -moz-box-shadow:    0 0 5px black;
+		    box-shadow:         0 0 5px black;
+		    color: white;
+		}
+		
+
+</style>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+  
+</head>
+<body onload="myFunction()" style="margin:0;">
+	
+  <div id="loader"></div>
+  <!--<div id="note">
+    ${output}
+</div>-->
+	
+    <!--Main Starts-->
+        <div style="display:none;" id="myDiv" class="animate-bottom">
+
+        <!--NAVBAR STARTS   -->
+        <div>
+            <nav class="navbar navbar-expand-sm bg-default navbar-dark">
+                <div class="container">
+                    <div>
+                        <a href="#"><img src="/MOD/theme1/images/logo1.png"  width="100px"></a>
+                    </div>
+                    <div class="navbar-right">
+                        <ul class="navbar-nav">
+                           <c:if test="${not empty user}">
+                           <li>
+                           <h3 id="output_header" class="text-success">Welcome <c:out value="${user}"></c:out></h3>
+                           </li>
+                           <li style="margin-left: 20%;">
+                           <a href="/Health1/user/logout"><span class="bg-success text-white py-3 px-4 rounded">LOGOUT</span></a>
+                           </li>
+                           </c:if>    
+                           <c:if test="${empty user}">
+                           <li>
+                                <a href="#"><span class="bg-success text-white py-3 px-4 rounded" data-toggle="modal" data-target="#loginModal">LOGIN</span></a>
+                                </li>
+                         
+                            
+                            <li style="margin-left: 20%;">
+                           
+                                 <a href="#"><span class="bg-success text-white py-3 px-4 rounded" data-toggle="modal" data-target="#registerModal"><span class="icon-plus mr-3"></span>REGISTER</span></a>
+                            
+                           </li>
+                           </c:if>
+                        </ul>  
+                    </div>  
+                </div>  
+            </nav>
+        </div>
+        <!--NAVBAR ENDS-->
+
+        <!--Search On Image STARTS-->
+        <div>
+            <div class="parallax">
+                <div class="overlay">
+                    <div style="height: 450px;"></div>
+                        <div class="container" style="margin-left: 140px;">
+                            <p style="color: white; font-size: 50px; text-align: left;">Search</p>
+                            
+                                <input id="searchbar" class="form-control border-0"  type="search" placeholder="Search..." aria-label="Search">
+                                <div class="row" style="margin-top: 2%;"> 
+                                  
+                                 <!-- <div class="col-md-3">
+                                    <a href="#mapid"><input type="button" class="btn btn-success btn-block search-btn" value="Search"></a>
+                                </div>-->
+                                        <c:if test="${not empty user}">
+                                        <div class="col-md-3">
+                                            <button type="button" class="btn btn-success btn-block search-btn" data-toggle="modal" data-target="#myModal">Advanced Search</button>
+                                        </div>
+                                        </c:if>
+                                    </div>
+                            
+                        </div>
+                    <div style="height: 260px;"></div>
+                </div>
+            </div>
+        </div>
+        <!--Search On Image ENDS-->
+
+        <div>
+       <!-- Advanced Search MODAL STARTS -->
+            <form action="/Health1/search" method="post">
+                <div id="myModal" class="modal fade" role="dialog" style="outline: none; margin-left: 0%; position: relative;  transform: translateY(-150%);" data-backdrop="static" data-keyboard="false">
+                    <div class="modal-dialog">
+        
+                    <!-- Modal content-->
+                        <div class="modal-content" style="border-radius: 20px 20px 20px 20px; width: 500px;">
+                            <div class="modal-header" >
+                                <h4 class="modal-title" style="color: #28a745; margin-left: 30%">Advanced Search</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                
+                                    <div class="row">
+                                        <div class="col-md-12 mb-3 mb-md-0">
+                                            <input type="text" class=" form-control border-1" id="adv" placeholder="Keyword Search">
+                                        </div>
+                                    </div>
+            
+                                    <div class="row" style="margin-top: 2%;">
+                                        <div class="col-md-12 mb-3 mb-md-0">
+                                            <input type="text" class="form-control border-1" id="adv" placeholder="Name">
+                                        </div>
+                                    </div>
+            
+                                    <div class="row" style="margin-top: 2%;">
+                                        <div class="col-md-12 mb-3 mb-md-0">
+                                            <input type="text" class="form-control border-1" id="adv" placeholder="Specialization" name="specialization">
+                                        </div>
+                                    </div>
+            
+                                    <div class="row" style="margin-top: 2%;">
+                                        <div class="col-md-12 mb-3 mb-md-0">
+                                            <input type="text" class="form-control border-1" id="adv" placeholder="City"  name="clinic">
+                                        </div>
+                                    </div>
+            
+                                    <div class="row" style="margin-top: 5%;">
+                                        <div class="col-md-6 mb-3 mb-md-0">
+                                            <input type="reset" class="btn search-btn btn-block" style="background-color: rgb(172, 172, 172); color: white;" value="Reset">
+                                        </div>
+                                        <div class="col-md-6 mb-3 mb-md-0">
+                                            <input type="submit" id="adv_sub" class="btn search-btn btn-success btn-block" value="Search">
+                                           
+                                        </div>
+
+                            
+                                    </div>
+                                    <br>
+            
+                                    <div class="modal-footer">
+                                        <div data-dismiss="modal" style="padding-top: 10px;">
+                                            <a href="#" style="color: #28a745;">Close</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--Advanced Search MODAL ENDS-->
+         <!--Login Register Modal STARTS-->
+        <div style="margin-left: -25%;">
+            <div id="loginModal" class="modal fade" role="dialog" style="outline: none; margin-left: 0%; position: relative;  transform: translateY(-120%);">
+                <div class="modal-dialog">
+        
+                    <!-- Modal content-->
+                    <div class="modal-content" style="width: 1000px;">
+                        <div class="container">
+                        <div class="modal-body">
+                                <p class="tip"><img src="/MOD/theme1/images/logo1.png" alt="logo" height="70px"></p>
+                                <div class="cont">
+                                  <div class="form sign-in">
+                                    <h2>User Login</h2>
+                                    <c:url var="validateUrl" value="/user/validate" />
+	<form id="user_form1" action="${validateUrl}" method="POST">
+    <label>
+      <span>User Name</span>
+      <input type="text" class="form-control" id="name1" name="username" required/>
+    </label>
+    <label>
+      <span>Password</span>
+      <input type="password" class="form-control" id="pwd1" name="password" required/>
+    </label>
+    
+    <button type="submit" class="submit">Login</button>
+   
+    </form>
+    </div>
+                                  <div class="sub-cont">
+                                    <div class="img">
+                                      <div class="img__text m--up">
+                                        <h2>I'm a Mendor !</h2>
+                                        <p>Mendor? Please click the below button to login.</p>
+                                      </div>
+                                      <div class="img__text m--in">
+                                        <h2>I'm a User !</h2>
+                                        <p>User? Please click the below button to login.</p>
+                                      </div>
+                                      <div class="img__btn">
+                                        <span class="m--up">Mendor</span>
+                                        <span class="m--in">User</span>
+                                      </div>
+                                    </div>
+                                    <div class="form sign-up">
+                                      <h2>Mendor Login</h2>
+                                      <c:url var="DocvalidateUrl" value="/user/docvalidate" />
+	<form id="user_form2" action="${DocvalidateUrl}" method="POST">
+    <label>
+      <span>User Name</span>
+      <input type="text" class="form-control" id="name2" name="username" required/>
+    </label>
+    <label>
+      <span>Password</span>
+      <input type="password" class="form-control" id="pwd2" name="password" required/>
+    </label>
+    
+    <button type="submit" class="submit">Login</button>
+    
+    </form>
+    </div>
+                                  </div>
+                                </div>    
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        
+        <div style="margin-left: -25%;">
+            <div id="registerModal" class="modal fade" role="dialog" style="outline: none; margin-left: 0%; position: relative;  transform: translateY(-120%);">
+                <div class="modal-dialog">
+            
+                        <!-- Modal content-->
+                        <div class="modal-content" style="width: 1000px;">
+                            <div class="container">
+                            <div class="modal-body">
+                            <a href="#"><img src="/MOD/theme1/images/logo1.png"  width="300px" style="padding-top: 20px; padding-bottom: 20px;"></a>
+                            
+                            <div class="cont1">
+                            <div class="form sign-in">
+                                <h2>Register as User</h2>
+                                <c:url var="registerUrl" value="/user/register" />
+    <div style = "height: 500px; overflow: auto;">
+	<form id="register_form3" onSubmit="return form3()" action="${registerUrl}" method="POST">
+    <label for="fname3">
+      <span>First Name</span>
+       <input type="text" class="form-control" id="fname3"  name="firstName" />
+       <ul class="input-requirements">
+	   		<li>Mandatory field</li>
+			<li>Must only contain letters</li>
+		</ul>
+    </label>
+    <label for="lname3">
+      <span>Last Name</span>
+       <input type="text" class="form-control" id="lname3"  name="lastName" />
+       <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>Must only contain letters</li>
+		</ul>
+    </label>
+    <label>
+      <span>Date of Birth </span>
+       <input type="date" class="form-control" id="age3"  name="age" />
+    </label>
+    <label>
+      <span>Gender : </span>
+       	<select name="gender" id="gender3">
+       		<option value="">Select</option>
+       		<option  vlaue="male">Male</option>
+       		<option  vlaue="female">Female</option>
+       		<option  vlaue="other">Other</option>
+       	</select>
+    </label>
+    <label for="contact3">
+      <span>Contact Number</span>
+       <input type="text" class="form-control" id="contact3"  name="mobile" />
+       <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>Must contain digits only</li>
+			<li>Must be 10 digits long</li>
+		</ul>
+    </label>
+    <label for="email3">
+      <span>Email</span>
+      <input type="text" class="form-control" id="email3"  name="email" />
+      <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>Must be a valid email id</li>
+		</ul>
+    </label>
+    <label for="name3">
+      <span>User Name</span>
+       <input type="text" class="form-control" id="name3"  name="username"  maxlength=15/>
+       <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>At least 6 characters long</li>
+			<li>Must only contain letters and numbers (no special characters)</li>
+		</ul>
+    </label>
+    <label for="pwd3">
+      <span>Password</span>
+      <input type="password" class="form-control" id="pwd3"  name="password" />
+      <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>At least 8 characters long (and less than 100 characters)</li>
+			<li>Contains at least 1 number</li>
+			<li>Contains at least 1 lowercase letter</li>
+			<li>Contains at least 1 uppercase letter</li>
+			<li>Contains a special character (e.g. @ !)</li>
+		</ul>
+    </label>
+    <button type="submit" class="submit">Register</button>
+    <button type="button" class="fb-btn" onClick="location.href='index.jsp';">Login</button>
+    </form>
+    </div>
+  </div>
+                            <div class="sub-cont">
+                                <div class="img">
+                                <div class="img__text m--up">
+                                    <h2>I'm a Mendor !</h2>
+                                    <p>Mendor? Please click the below button to login.</p>
+                                </div>
+                                <div class="img__text m--in">
+                                    <h2>I'm a User !</h2>
+                                    <p>User? Please click the below button to login.</p>
+                                </div>
+                                <div class="b1">
+                                <div class="img__btn">
+                                    <span class="m--up">Mendor</span>
+                                    <span class="m--in">User</span>
+                                </div>
+                                </div>
+                                </div>
+                                
+                                <div class="form sign-up">
+                                <h2>Register as Mendor</h2>
+                                <c:url var="docregisterUrl" value="/doctor/register" />
+     
+     <div style = "height: 500px; overflow: auto;">
+	<form id="register_form4"  onSubmit="return form4()" action="${docregisterUrl}" method="POST">
+    <label for="fname4">
+      <span>First Name</span>
+       <input type="text" class="form-control" id="fname4"  name="firstName"/>
+       <ul class="input-requirements">
+	   		<li>Mandatory field</li>
+			<li>Must only contain letters</li>
+		</ul>
+    </label>
+    
+    <label for="lname4">
+      <span>Last Name</span>
+       <input type="text" class="form-control" id="lname4"  name="lastName"/>
+       <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>Must only contain letters</li>
+		</ul>
+    </label>
+    
+    <label for="age4">
+      <span>Date of Birth </span>
+       <input type="date" class="form-control" id="age4"  name="age" />
+    </label>
+    
+    <label for="specialization4">
+      <span>Specialization</span>
+       <input type="text" class="form-control" id="specialization4"  name="specialization"/>
+       <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>Must only contain letters</li>
+		</ul>
+    </label>
+    
+    <label for="practice4">
+      <span>Experience</span>
+       <input type="text" class="form-control" id="practice4"  name="Experience" />
+       <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>Must only contain Number</li>
+		</ul>
+    </label>
+    
+    <label for="clinic4">
+      <span>Office</span>
+       <input type="text" class="form-control" id="clinic4"  name="Office" />
+        <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>Must only contain letters</li>
+		</ul>
+    </label>
+    
+    <label for="contact4">
+      <span>Contact Number</span>
+       <input type="text" class="form-control" id="contact4"  name="mobile" maxlength="10"/>
+       <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>Must contain digits only</li>
+			<li>Must be 10 digits long</li>
+		</ul>
+    </label>
+    
+    <label for="email4">
+      <span>Email</span>
+      <input type="text" class="form-control" id="email4"  name="email" />
+      <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>Must be a valid email id</li>
+		</ul>
+    </label>
+    
+    <label for="name4">
+      <span>User Name</span>
+       <input type="text" class="form-control" id="name4"  name="username" maxlength=15/>
+       <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>At least 6 characters long</li>
+			<li>Must only contain letters and numbers (no special characters)</li>
+		</ul>
+    </label>
+    
+    <label for="pwd4">
+      <span>Password</span>
+      <input type="password" class="form-control" id="pwd4"  name="password" />
+      <ul class="input-requirements">
+			<li>Mandatory field</li>
+			<li>At least 8 characters long (and less than 100 characters)</li>
+			<li>Contains at least 1 number</li>
+			<li>Contains at least 1 lowercase letter</li>
+			<li>Contains at least 1 uppercase letter</li>
+			<li>Contains a special character (e.g. @ !)</li>
+		</ul>
+    </label>
+    
+    <button type="submit" class="submit">Register</button>
+    <button type="button" class="fb-btn" onclick="location.href='index.jsp';">Login</button>
+    </form>
+    </div>
+    </div>
+                            </div>
+                            </div>
+                        
+                    </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <script src="/MOD/theme1/js/register.js" ></script>
+        </div>
+         <script src="/MOD/theme1/js/index.js" ></script>
+    
+        <!--Login Register Modal ENDS-->
+
+
+        <!--Map STARTS
+        <div class="container" id="mapid">
+            <h1 style="margin-top: 10%; margin-bottom: 10%; text-align: center;">Map</h1>
+            <div>
+                <iframe src="/Health1/map.jsp" name="map" allowTransparency="false" scrolling="no" frameborder="0" width="100%" height="500px"></iframe>
+            </div>
+        </div>
+        Map ENDS-->
+
+        <!--Cards STARTS
+        <div id="resultblock" style="display: block; margin-top: 5%;">
+       
+        <c:if test="${not empty user}">
+         <div class="sidenav">
+         <form action="chatPage" method="post">
+         <button type="submit" class="btn search-btn btn-success btn-block">Chat</button>
+         </form>
+         <c:forEach var="doctor" items="${onlineUser}">
+        <li><button class="open-button" onclick="openForm('${doctor.name}')">${doctor.firstName}</button></li>
+        
+        </c:forEach>
+        
+        
+        
+         </div>
+         </c:if>
+        <div class="chat-popup" id="myForm">
+  <form action="chat" class="form-container" method="post">
+    <h1>Chat</h1>
+
+    <input type="text" id="t1" name="rec" value="avinash">
+    <div id="chatBox">
+    <c:forEach var="chat" items="${reciever}">
+    <li><p id="reci" style="text-align:left;"><font color="black">${chat.msg}</font></p></li>
+    </c:forEach>
+    </div>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm(name) {
+	document.getElementById("t1").value = name;
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+        </div>
+      -->
+   	
+   		<!--Cards STARTS-->
+        <div id="resultblock" style="display: block; margin-top: 10%;">
+            <h1 style="text-align: center;">Blog</h1>
+            <div style="background-color: #28a745; width: 150px; height: 5px;  margin-bottom: 5%; margin-left: 46%;"></div>
+           <!--Carousel Wrapper-->
+           <div style=" margin-top: 5%;">
+            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+              
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">     
+        
+  
+      <!--First slide-->
+      <div class="carousel-item active">
+          <div class="card-deck">
+        <div class="col-md-4">
+          <div class="card mb-2">
+            <img class="card-img-top" src="/MOD/theme1/images/img_1.jpg"  alt="Card image cap" height=50% >
+            <div class="card-body">
+              <h4 class="card-title">Healthy Food</h4>
+              <p class="card-text">Health can be defined as physical, mental, and social wellbeing, and as a resource for living a full life.</p>
+              <a class="btn btn-success">Button</a>
+            </div>
+          </div>
+        </div>
+  
+        
+        <div class="col-md-4">
+          <div class="card mb-2">
+            <img class="card-img-top" src="/MOD/theme1/images/img_2.jpg" height=50% alt="Card image cap" >
+            <div class="card-body">
+              <h4 class="card-title">Healthy Lifestyle</h4>
+              <p class="card-text">It refers not only to the absence of disease, but the ability to recover and bounce back from illness and other problems.</p>
+              <a class="btn btn-success">Button</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-4">
+          <div class="card mb-2">
+            <img class="card-img-top" src="/MOD/theme1/images/img_3.jpg"  height=50% alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Exercise Daily</h4>
+              <p class="card-text">Factors for good health include genetics, the environment, relationships, and education.</p>
+              <a class="btn btn-success">Button</a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+      </div>
+   
+      <!--/.First slide-->
+  
+      <!--Second slide-->
+     
+      <div class="carousel-item">
+          <div class="card-deck">
+        <div class="col-md-4">
+          <div class="card mb-2">
+            <img class="card-img-top" src="/MOD/theme1/images/img_4.jpg"  height=50%  alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Smile Benefits</h4>
+              <p class="card-text">A healthful diet, exercise, screening for diseases, and coping strategies can all enhance a person's health.</p>
+              <a class="btn btn-success">Button</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-4">
+          <div class="card mb-2">
+            <img class="card-img-top" src="/MOD/theme1/images/img_5.jpg"  height=50% alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Diseases</h4>
+              <p class="card-text">Health is a state of complete physical, mental and social well-being and not merely the absence of disease or infirmity." WHO, 1948.</p>
+              <a class="btn btn-success">Button</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-4">
+          <div class="card mb-2">
+            <img class="card-img-top" src="/MOD/theme1/images/img_6.png" height=30% alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Helath Care</h4>
+              <p class="card-text">A resource for everyday life, not the objective of living. Health is a positive concept emphasizing social and personal resources, as well as physical capacities.</p>
+              <a class="btn btn-success">Button</a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+      </div>
+      
+      <!--/.Second slide-->
+  
+     
+      </div>
+    </div>
+    <!--/.Slides-->
+    
+    <div class="container">
+    
+      </div>
+
+
+    </div>
+
+        <div class="container">
+            <a href="#multi-item-example" data-slide="prev">
+                <span class="fa fa-chevron-left" style="color:#28a745;"></span>
+              </a>
+              <a href="#multi-item-example" data-slide="next">
+                <span class="fa fa-chevron-right" style="color:#28a745;"></span>
+              </a>
+        </div>
+
+        </div>
+
+         <!--Cards ENDS-->
+
+   		
+
+
+
+        <!--Footer STARTS-->
+        <div style="height: 100%; background-color: black; margin-top: 20%; padding-top: 5%;">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <h3 class="footer-heading mb-4 text-white">About</h3>
+                              <p style="color: white;">People expect to be bored by eLearning—let’s show them it doesn’t have to be like that!</p>
+                              <p><a href="#" class="btn btn-success text-white px-4">Read More</a></p>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <h3 class="footer-heading mb-4 text-white">Quick Menu</h3>
+                                    <ul class="list-unstyled">
+                                      <li><a href="#" style="color: #28a745">About</a></li>
+                                      <li><a href="#" style="color: #28a745">Services</a></li>
+                                      <li><a href="#" style="color: #28a745">Emergencies</a></li>
+                                      <li><a href="#" style="color: #28a745">News</a></li>
+                                      <li><a href="#" style="color: #28a745">Mendors Portal</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                  <h3 class="footer-heading mb-4 text-white">Career With Us</h3>
+                                    <ul class="list-unstyled">
+                                      <li><a href="#" style="color: #28a745">Full Time</a></li>
+                                      <li><a href="#" style="color: #28a745">Internship</a></li>
+                                    </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row pt-2 mt-5 text-center">
+                            <div class="col-md-12">
+                              <p style="color: white;">
+                              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                              </p>
+                            </div>
+                            
+                          </div>
+                        </div>
+                        <!--  Modal Avinash -->
+                        <div class="container">
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">Report Technical Issues</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog modal-lg" >
+      <!-- Modal content-->
+      <div class="modal-content" style="height:650px;">
+            <div class="modal-header">
+          <h4 class="modal-title">Report via E-Mail</h4>
+        </div>
+        <div class="modal-body">
+         <center>
+            <form id="sendEmailForm" method="post" action="sendEmail" enctype="multipart/form-data">
+                <table id="emailFormBeanTable" border="0" width="80%">
+                    <tr>
+                        <td>Email To: </td>
+                        <td><input id="receiverMail" type="text" name="mailTo" size="65" /><br><br></td>
+                    </tr>
+                    <tr>
+                        <td>Subject: </td>
+                        <td><input id="mailSubject" type="text" name="subject" size="65" /><br><br></td>
+                    </tr>
+                    <tr>
+                        <td>Message: </td>
+                        <td><textarea id="mailMessage" cols="50" rows="10" name="message" size="65"></textarea><br><br><br></td>
+                    </tr>
+                    <tr>
+                        <td>Attachment: </td>
+                        <td><input id="mailAttachment" type="file" name="attachFileObj" size="60" /><br><br></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><input id="sendEmailBtn" type="submit" value="Send Email" data-dismiss="modal"/></td>
+                    </tr>
+                </table>
+            </form>
+        </center>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+                        
+               
+        </div>
+        <!--Footer ENDS-->
+
+    <!--Main Ends-->
+    </div>
+
+</body>
+</html>
