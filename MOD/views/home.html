@@ -154,7 +154,7 @@
   }
   
   
-  /*************************************************************************REGISTER DOCTOR**************************************************************************/
+  /*************************************************************************REGISTER MENDOR**************************************************************************/
   function form4() {
     var fname = document.getElementById("fname4");
     var lname = document.getElementById("lname4");
@@ -346,10 +346,10 @@
 		
 
 </style>
-
+</head>
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
   
-</head>
+
 <body onload="myFunction()" style="margin:0;">
 	
   <div id="loader"></div>
@@ -363,21 +363,20 @@
         <!--NAVBAR STARTS   -->
         <div>
             <nav class="navbar navbar-expand-sm bg-default navbar-dark">
+                <div>
+                    <a href="#"><img src="/MOD/theme1/images/logo1.png"  width="100px"></a>
+                </div>
                 <div class="container">
-                    <div>
-                        <a href="#"><img src="/MOD/theme1/images/logo1.png"  width="100px"></a>
-                    </div>
+                   
                     <div class="navbar-right">
                         <ul class="navbar-nav">
-                           <c:if test="${not empty user}">
+                          
                            <li>
                            <h3 id="output_header" class="text-success">Welcome <c:out value="${user}"></c:out></h3>
                            </li>
-                           <li style="margin-left: 20%;">
-                           <a href="/Health1/user/logout"><span class="bg-success text-white py-3 px-4 rounded">LOGOUT</span></a>
-                           </li>
-                           </c:if>    
-                           <c:if test="${empty user}">
+                          
+                              
+                   
                            <li>
                                 <a href="#"><span class="bg-success text-white py-3 px-4 rounded" data-toggle="modal" data-target="#loginModal">LOGIN</span></a>
                                 </li>
@@ -385,10 +384,10 @@
                             
                             <li style="margin-left: 20%;">
                            
-                                 <a href="#"><span class="bg-success text-white py-3 px-4 rounded" data-toggle="modal" data-target="#registerModal"><span class="icon-plus mr-3"></span>REGISTER</span></a>
+                                 <a href="#"><span class="bg-success text-white py-3 px-4 rounded" data-toggle="modal" data-target="#registerModal"><span class="icon-plus mr-3"></span>Signup</span></a>
                             
                            </li>
-                           </c:if>
+                          
                         </ul>  
                     </div>  
                 </div>  
@@ -858,8 +857,8 @@ function closeForm() {
           <div class="card mb-2">
             <img class="card-img-top" src="/MOD/theme1/images/img_1.jpg"  alt="Card image cap" height=50% >
             <div class="card-body">
-              <h4 class="card-title">Healthy Food</h4>
-              <p class="card-text">Health can be defined as physical, mental, and social wellbeing, and as a resource for living a full life.</p>
+              <h4 class="card-title">Java</h4>
+              
               <a class="btn btn-success">Button</a>
             </div>
           </div>
@@ -868,10 +867,10 @@ function closeForm() {
         
         <div class="col-md-4">
           <div class="card mb-2">
-            <img class="card-img-top" src="/MOD/theme1/images/img_2.jpg" height=50% alt="Card image cap" >
+            <img class="card-img-top" src="/MOD/theme1/images/img_2.png" height=50% alt="Card image cap" >
             <div class="card-body">
-              <h4 class="card-title">Healthy Lifestyle</h4>
-              <p class="card-text">It refers not only to the absence of disease, but the ability to recover and bounce back from illness and other problems.</p>
+              <h4 class="card-title">Angular</h4>
+             
               <a class="btn btn-success">Button</a>
             </div>
           </div>
@@ -881,8 +880,7 @@ function closeForm() {
           <div class="card mb-2">
             <img class="card-img-top" src="/MOD/theme1/images/img_3.jpg"  height=50% alt="Card image cap">
             <div class="card-body">
-              <h4 class="card-title">Exercise Daily</h4>
-              <p class="card-text">Factors for good health include genetics, the environment, relationships, and education.</p>
+              <h4 class="card-title">Spring</h4>
               <a class="btn btn-success">Button</a>
             </div>
           </div>
@@ -899,10 +897,9 @@ function closeForm() {
           <div class="card-deck">
         <div class="col-md-4">
           <div class="card mb-2">
-            <img class="card-img-top" src="/MOD/theme1/images/img_4.jpg"  height=50%  alt="Card image cap">
+            <img class="card-img-top" src="/MOD/theme1/images/img_4.png"  height=50%  alt="Card image cap">
             <div class="card-body">
-              <h4 class="card-title">Smile Benefits</h4>
-              <p class="card-text">A healthful diet, exercise, screening for diseases, and coping strategies can all enhance a person's health.</p>
+              <h4 class="card-title">React</h4>
               <a class="btn btn-success">Button</a>
             </div>
           </div>
@@ -912,8 +909,7 @@ function closeForm() {
           <div class="card mb-2">
             <img class="card-img-top" src="/MOD/theme1/images/img_5.jpg"  height=50% alt="Card image cap">
             <div class="card-body">
-              <h4 class="card-title">Diseases</h4>
-              <p class="card-text">Health is a state of complete physical, mental and social well-being and not merely the absence of disease or infirmity." WHO, 1948.</p>
+              <h4 class="card-title">Bootstrap</h4>
               <a class="btn btn-success">Button</a>
             </div>
           </div>
@@ -923,8 +919,7 @@ function closeForm() {
           <div class="card mb-2">
             <img class="card-img-top" src="/MOD/theme1/images/img_6.png" height=30% alt="Card image cap">
             <div class="card-body">
-              <h4 class="card-title">Helath Care</h4>
-              <p class="card-text">A resource for everyday life, not the objective of living. Health is a positive concept emphasizing social and personal resources, as well as physical capacities.</p>
+              <h4 class="card-title">Ruby</h4>
               <a class="btn btn-success">Button</a>
             </div>
           </div>
@@ -949,10 +944,10 @@ function closeForm() {
 
         <div class="container">
             <a href="#multi-item-example" data-slide="prev">
-                <span class="fa fa-chevron-left" style="color:#28a745;"></span>
+                <span class="fa fa-chevron-left" style="color: #28a745;"></span>
               </a>
               <a href="#multi-item-example" data-slide="next">
-                <span class="fa fa-chevron-right" style="color:#28a745;"></span>
+                <span class="fa fa-chevron-right" style="color: #28a745;"></span>
               </a>
         </div>
 
@@ -970,7 +965,7 @@ function closeForm() {
                           <div class="row">
                             <div class="col-md-4">
                               <h3 class="footer-heading mb-4 text-white">About</h3>
-                              <p style="color: white;">People expect to be bored by eLearning—let’s show them it doesn’t have to be like that!</p>
+                              <p style="color: white;">People expect to be bored by eLearning lets show them it does not have to be like that!</p>
                               <p><a href="#" class="btn btn-success text-white px-4">Read More</a></p>
                             </div>
                             <div class="col-md-6">

@@ -258,7 +258,7 @@ input {
 .submit {
   margin-top: 40px;
   margin-bottom: 20px;
-  background: #28a745;
+  background:#28a745;
   text-transform: uppercase;
 }
 
@@ -331,7 +331,7 @@ input {
 	color: #e74c3c;
 }
 .input-requirements li.valid {
-	color: #2ecc71;
+	color: #28a745;
 }
 
 .input-requirements li.valid:after {
